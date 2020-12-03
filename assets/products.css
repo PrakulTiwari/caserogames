@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.product-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Poppins';
+    opacity: 0;
+    pointer-events: none;
+    animation: main-page 0.4s linear;
+    animation-delay: 1s;
+}
+
+.product-page nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 15vh;
+    width: 100%;
+    background-image: linear-gradient( 90deg,  rgba(255,157,129,1) 24.3%, rgba(255,78,78,1) 78.3% );
+}
+
+.product-page nav ul li {
+    list-style: none;
+    display: inline-flex;
+}
+
+.product-page nav ul li a {
+    text-decoration: none;
+    color: white;
+    margin: 1rem 3rem;
+    transition: 0.4s;
+}
+
+.product-page nav h1 {
+    color: white;
+}
+
+.product-page nav .hamburger {
+    display: none;
+}
+
+.product-page header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-self: flex-start;
+    opacity: 0;
+    animation: textSlide 0.4s linear;
+    animation-delay: 2s;
+}
+
+.product-page header .cubiway {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("https://lh3.googleusercontent.com/qjO_L_GfI0ilsGug1n93TYKdKUJ-hpAQFI6A10gwb8H2K8JaqP2JTDpobVt9Cqnp2g=s180-rw");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 180px;
+    height: 180px;
+    border: 2px solid tomato;
+    padding: 2vh 2vw;
+    margin: 3vh 3vw;
+}
+
+@keyframes main-page {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1; 
+    }
+}
+
+@keyframes navSlide {
+    100% {
+        transform: translateX(-100vw);
+    }
+}
+
+@keyframes navSlideOut {
+    100% {
+        transform: translateX(100vw);
+    }
+}
+
+@keyframes textSlide {
+    0% {
+        transform: translateX(-10vw);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0vw);
+        opacity: 1;
+    }
+}
+
+@keyframes anchRotate {
+    from {
+        transform: rotateZ(5deg);
+    }
+
+    to {
+        transform: rotateZ(-5deg);
+    }
+}
+
+@media (min-width: 1025px) {
+    .product-page nav ul li a:hover {
+        border-bottom: 1px solid white;
+        transition: 0.4s;
+    }
+
+    .product-page header .cubiway:hover {
+        animation: anchRotate 0.1s linear 5 alternate;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .product-page nav ul {
+        display: none;
+        position: absolute;
+        height: 100vh;
+        width: 0;
+        left: 100vw;
+        top: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,58,58,1) 0%, rgba(255,165,165,1) 75% );
+    }
+    .product-page nav .hamburger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .product-page nav .hamburger .bun {
+        width: 20px;
+        height: 2px;
+        background: white;
+        margin: 2px;
+    }
+
+    .product-page nav ul .cross {
+        position: absolute;
+        top: 5%;
+        left: 80%;
+        cursor: pointer;
+        color: white;
+        font-size: 24px;
+        font-weight: 700;
+    }
+}

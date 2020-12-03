@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body {
+    overflow-x: hidden;
+} */
+
+.home-page .welcome {
+    height: 100vh;
+    background-color: rgb(32, 32, 32);
+    z-index: -10;
+}
+
+.home-page .welcome span {
+    position: absolute;
+    pointer-events: none;
+    background: #fff;
+    z-index: -5;
+    animation: squareFlakeAnim 5s linear infinite;
+}
+
+.home-page .welcome {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.home-page .welcome h1 {
+    color: white;
+    font-family: 'Poppins';
+    font-size: 48px;
+    text-align: center;
+}
+
+.home-page .welcome .welcome-anim {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 0;
+    left: 100vw;
+    height: 100%;
+    width: 0%;
+    animation: welcomeAnimSlide 1s linear;
+    animation-delay: 5s;
+}
+
+.home-page .welcome .heads {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.home-page .welcome .welcome-anim .part-1 {
+    width: 100%;
+    height: 20%;
+    background: violet;
+}
+
+.home-page .welcome .welcome-anim .part-5 {
+    width: 100%;
+    height: 20%;
+    background: orange;
+}
+
+.home-page .welcome .welcome-anim .part-2 {
+    width: 100%;
+    height: 20%;
+    background: tomato;
+}
+
+.home-page .welcome .welcome-anim .part-3 {
+    width: 100%;
+    height: 20%;
+    background: royalblue;
+}
+
+.home-page .welcome .welcome-anim .part-4 {
+    width: 100%;
+    height: 20%;
+    background: yellow;
+}
+
+.home-page .main-home-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins';
+    color: rgb(32, 32, 32);
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    animation: main-page 0.4s linear;
+    animation-delay: 6s;
+}
+
+.home-page .main-home-page nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 15vh;
+    width: 100%;
+    background-image: linear-gradient( 90deg,  rgba(255,157,129,1) 24.3%, rgba(255,78,78,1) 78.3% );
+}
+
+.home-page .main-home-page nav ul li {
+    list-style: none;
+    display: inline-flex;
+}
+
+.home-page .main-home-page nav ul li a {
+    text-decoration: none;
+    color: white;
+    margin: 1rem 3rem;
+    transition: 0.4s;
+}
+
+.home-page .main-home-page nav h1 {
+    color: white;
+}
+
+.home-page .main-home-page nav .hamburger {
+    display: none;
+}
+
+.home-page .main-home-page header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5vh 5vw;
+    opacity: 0;
+    animation: textSlide 0.4s linear;
+    animation-delay: 7s;
+}
+
+.home-page .main-home-page header .texts {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.home-page .main-home-page header .texts h1 {
+    color: tomato;
+    align-self: flex-start;
+}
+
+.home-page .main-home-page header .texts .line {
+    height: 2px;
+    width: 15vw;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    align-self: flex-start;
+    margin-bottom: 3vh;
+}
+
+.home-page .main-home-page header .img {
+    min-width: 500px;
+    min-height: 410px;
+    background: url(../images/undraw_gaming_6oy3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home-page .main-home-page header .texts a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem 2rem;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,58,58,1) 0%, rgba(255,165,165,1) 75% );margin: 1rem;
+    margin-left: 0;
+    border-radius: 5px;
+}
+
+@keyframes squareFlakeAnim {
+    0% {
+        transform: scale(0) translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) translateY(-500%) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes welcomeAnimSlide {
+    0% {
+        transform: translateX(0vw);
+    }
+    100% {
+        transform: translateX(-200vw);
+    }
+}
+
+@keyframes main-page {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1; 
+    }
+}
+
+@keyframes navSlide {
+    100% {
+        transform: translateX(-100vw);
+    }
+}
+
+@keyframes navSlideOut {
+    100% {
+        transform: translateX(100vw);
+    }
+}
+
+@keyframes textSlide {
+    0% {
+        transform: translateX(-10vw);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0vw);
+        opacity: 1;
+    }
+}
+
+@media (min-width: 1024px) {
+    .home-page .main-home-page nav ul li a:hover {
+        border-bottom: 1px solid white;
+        transition: 0.4s;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .home-page .main-home-page nav ul {
+        display: none;
+        position: absolute;
+        height: 100vh;
+        width: 0;
+        left: 100vw;
+        top: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,58,58,1) 0%, rgba(255,165,165,1) 75% );
+    }
+    .home-page .main-home-page nav .hamburger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .home-page .main-home-page nav .hamburger .bun {
+        width: 20px;
+        height: 2px;
+        background: white;
+        margin: 2px;
+    }
+
+    .home-page .main-home-page nav ul .cross {
+        position: absolute;
+        top: 5%;
+        left: 80%;
+        cursor: pointer;
+        color: white;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .home-page .main-home-page header {
+        flex-direction: column;
+    }
+
+    .home-page .main-home-page header .img {
+        min-width: 280px;
+        min-height: 229px;
+    }
+}

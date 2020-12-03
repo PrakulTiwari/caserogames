@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100%;
+    background: rgb(32,32,32);
+    font-family: 'Poppins';
+    padding: 10vh 10vw;
+}
+
+.score {
+    color: rgb(224, 224, 224);
+    min-height: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.score h2 {
+    font-size: 30px;
+    margin: 0 5vw;
+    text-align: center;
+}
+
+.score p {
+    text-align: center;
+    padding: 10px;
+    font-size: 25px;
+}
+
+.intro {
+    color: rgb(224, 224, 224);
+    min-height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: opacity 0.5s ease;
+    margin-top: 10vh;
+}
+
+.intro h1 {
+    font-size: 30px;
+    margin-bottom: 5vh;
+    text-align: center;
+}
+
+.intro button, .match button {
+    width: 150px;
+    height: 50px;
+    background: none;
+    border: none;
+    color: #031321;
+    font-size: 20px;
+    background: rgb(45, 117, 96);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.match {
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    transition: opacity 0.5s ease 0.5s;
+}
+
+.winner {
+    color: rgb(224, 224, 224);
+    text-align: center;
+    font-size: 50px;
+    text-align: center;
+}
+
+.hands, .options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.options button {
+    margin: 2.5vh 0;
+}
+
+.player-hand {
+    transform: rotateY(180deg);
+}
+
+div.fadeOut {
+    opacity: 0;
+    pointer-events: none;
+}
+
+div.fadeIn {
+    opacity: 1;
+    pointer-events: all;
+}
+
+@keyframes shakePlayer {
+    0% {
+        transform: rotateY(180deg) translateY(0px);
+    }
+    15% {
+        transform: rotateY(180deg) translateY(-50px);
+    }
+    25% {
+        transform: rotateY(180deg) translateY(0px);
+    }
+    35% {
+        transform: rotateY(180deg) translateY(-50px);
+    }
+    50% {
+        transform: rotateY(180deg) translateY(0px);
+    }
+    65% {
+        transform: rotateY(180deg) translateY(-50px);
+    }
+    75% {
+        transform: rotateY(180deg) translateY(0px);
+    }
+    85% {
+        transform: rotateY(180deg) translateY(-50px);
+    }
+    100% {
+        transform: rotateY(180deg) translateY(0px);
+    }
+}
+
+@keyframes shakeComputer {
+    0% {
+        transform: translateY(0px);
+    }
+    15% {
+        transform: translateY(-50px);
+    }
+    25% {
+        transform: translateY(0px);
+    }
+    35% {
+        transform: translateY(-50px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    65% {
+        transform: translateY(-50px);
+    }
+    75% {
+        transform: translateY(0px);
+    }
+    85% {
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@media (max-width: 800px) {
+    div {
+        flex-direction: column;
+    }
+
+    .hands {
+        flex-direction: row;
+    }
+
+    .hands img {
+        width: 150px;
+        height: 132px;
+    }
+}
+
+@media (max-width: 275px) {
+    .hands img {
+        width: 100px;
+        height: 88px;
+    }
+}

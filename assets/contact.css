@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contact-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Poppins';
+    opacity: 0;
+    pointer-events: none;
+    animation: main-page 0.4s linear;
+    animation-delay: 1s;
+}
+
+.contact-page nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 15vh;
+    width: 100%;
+    background-image: linear-gradient( 90deg,  rgba(255,157,129,1) 24.3%, rgba(255,78,78,1) 78.3% );
+}
+
+.contact-page nav ul li {
+    list-style: none;
+    display: inline-flex;
+}
+
+.contact-page nav ul li a {
+    text-decoration: none;
+    color: white;
+    margin: 1rem 3rem;
+    transition: 0.4s;
+}
+
+.contact-page nav h1 {
+    color: white;
+}
+
+.contact-page nav .hamburger {
+    display: none;
+}
+
+.contact-page header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    opacity: 0;
+    animation: textSlide 0.4s linear;
+    animation-delay: 2s;
+}
+
+.contact-page header .text-part {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.contact-page header .image {
+    background: url(../images/undraw_contact_us_15o2.png);
+    background-size: cover;
+    width: 700px;
+    height: 385px;
+    margin: 0 5vw;
+    background-repeat: no-repeat;
+}
+
+.contact-page header h2 {
+    color: tomato;
+    font-size: 30px;
+    text-align: center;
+}
+
+.contact-page header h3 {
+    font-size: 28px;
+    text-align: center;
+}
+
+.contact-page header h4 {
+    color: tomato;
+    font-size: 26px;
+    text-align: center;
+}
+
+.contact-page header h6 {
+    font-size: 22px;
+    text-align: center;
+}
+
+.contact-page header .part {
+    margin: 5vh 0;
+}
+
+.contact-page header .subpart {
+    margin: 5vh 0;
+}
+
+@keyframes main-page {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1; 
+    }
+}
+
+@keyframes navSlide {
+    100% {
+        transform: translateX(-100vw);
+    }
+}
+
+@keyframes navSlideOut {
+    100% {
+        transform: translateX(100vw);
+    }
+}
+
+@keyframes textSlide {
+    0% {
+        transform: translateX(-10vw);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0vw);
+        opacity: 1;
+    }
+}
+
+@keyframes anchRotate {
+    from {
+        transform: rotateZ(5deg);
+    }
+
+    to {
+        transform: rotateZ(-5deg);
+    }
+}
+
+@media (min-width: 1025px) {
+    .contact-page nav ul li a:hover {
+        border-bottom: 1px solid white;
+        transition: 0.4s;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .contact-page nav ul {
+        display: none;
+        position: absolute;
+        height: 100vh;
+        width: 0;
+        left: 100vw;
+        top: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,58,58,1) 0%, rgba(255,165,165,1) 75% );
+    }
+    .contact-page nav .hamburger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .contact-page nav .hamburger .bun {
+        width: 20px;
+        height: 2px;
+        background: white;
+        margin: 2px;
+    }
+
+    .contact-page nav ul .cross {
+        position: absolute;
+        top: 5%;
+        left: 80%;
+        cursor: pointer;
+        color: white;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .contact-page header {
+        flex-direction: column;
+    }
+
+    .contact-page header .image {
+        width: 300px;
+        height: 165px;
+    }
+}

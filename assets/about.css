@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.about-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Poppins';
+    opacity: 0;
+    pointer-events: none;
+    animation: main-page 0.4s linear;
+    animation-delay: 1s;
+}
+
+.about-page nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 15vh;
+    width: 100%;
+    background-image: linear-gradient( 90deg,  rgba(255,157,129,1) 24.3%, rgba(255,78,78,1) 78.3% );
+}
+
+.about-page nav ul li {
+    list-style: none;
+    display: inline-flex;
+}
+
+.about-page nav ul li a {
+    text-decoration: none;
+    color: white;
+    margin: 1rem 3rem;
+    transition: 0.4s;
+}
+
+.about-page nav h1 {
+    color: white;
+}
+
+.about-page nav .hamburger {
+    display: none;
+}
+
+.about-page header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5vh 0;
+    width: 90%;
+    height: 100%;
+    opacity: 0;
+    animation: textSlide 0.4s linear;
+    animation-delay: 2s;
+}
+
+.about-page header .image1 {
+    clip-path: circle(250px at center);
+    width: 500px;
+    height: 430px;
+    background: url(../images/ssj\ rosecut.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -10;
+}
+
+.about-page header h1 {
+    font-size: 42px;
+    color: tomato;
+}
+
+.about-page header .about-me-texts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.about-page header .about-me-texts p {
+    font-size: 18px;
+    width: 70%;
+}
+
+@keyframes main-page {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1; 
+    }
+}
+
+@keyframes navSlide {
+    100% {
+        transform: translateX(-100vw);
+    }
+}
+
+@keyframes navSlideOut {
+    100% {
+        transform: translateX(100vw);
+    }
+}
+
+@keyframes textSlide {
+    0% {
+        transform: translateX(-10vw);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0vw);
+        opacity: 1;
+    }
+}
+
+@media (min-width: 1024px) {
+    .about-page nav ul li a:hover {
+        border-bottom: 1px solid white;
+        transition: 0.4s;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .about-page nav ul {
+        display: none;
+        position: absolute;
+        height: 100vh;
+        width: 0;
+        left: 100vw;
+        top: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(255,58,58,1) 0%, rgba(255,165,165,1) 75% );
+    }
+    .about-page nav .hamburger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .about-page nav .hamburger .bun {
+        width: 20px;
+        height: 2px;
+        background: white;
+        margin: 2px;
+    }
+
+    .about-page nav ul .cross {
+        position: absolute;
+        top: 5%;
+        left: 80%;
+        cursor: pointer;
+        color: white;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .about-page header .image1 {
+        width: 300px;
+        height: 258px;
+    }
+
+    .about-page header h1 {
+        font-size: 24px;
+    }
+
+    .about-page header .about-me-texts p {
+        font-size: 16px;
+        width: 100%;
+    }
+}
